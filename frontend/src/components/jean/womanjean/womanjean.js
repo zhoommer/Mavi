@@ -118,8 +118,38 @@ const WomanJean = () => {
 
       <Grid container columns={{ xs: 14, sm: 14, md: 14, lg: 14 }}>
         {womanJeans.map((jean) => (
-          <Grid xs={3} sm={3} md={3} lg={3} key={jean.id} className="border rounded m-4">
-            <img src={ jean.url } alt={ jean.title } className="womanImages"/>
+          <Grid
+            xs={3}
+            sm={3}
+            md={3}
+            lg={3}
+            key={jean.id}
+            className="border rounded m-4"
+            style={{ cursor: "pointer" }}
+          >
+            <img src={jean.url} alt={jean.title} className="womanImages" />
+            <div className="fw-bold m-3">{jean.title}</div>
+            <div className="fw-bold m-2">
+              <span className="m-2">
+                {jean.discountedPrice > 0 ? jean.discountedPrice + " ₺" : null}
+              </span>
+
+              <span className="m-2">
+                {jean.discountedPrice ? (
+                  <span className="text-decoration-line-through text-muted">
+                    {jean.price} ₺
+                  </span>
+                ) : (
+                  <span>{jean.price} ₺</span>
+                )}
+              </span>
+              {jean.discountedPrice ? (
+                <span className="text-danger">
+                  {"%" +
+                    Math.floor(100 - (jean.discountedPrice / jean.price) * 100)}
+                </span>
+              ) : null}
+            </div>
           </Grid>
         ))}
       </Grid>
