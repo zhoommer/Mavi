@@ -75,7 +75,8 @@ export class ProductsService {
   }
 
   async getAllWomenJeans(code: string): Promise<ResponseModel> {
-    const jeans = await this.prisma.products.findMany({
+    const jeans = await this.prisma.products.groupBy({
+      by: ['code', 'url'],
       where: {
         code: {
           startsWith: code,

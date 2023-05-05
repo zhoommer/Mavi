@@ -42,3 +42,27 @@
     text-decoration: none;
 }
 
+.categories {
+}
+
+
+.categories > a:hover {
+    color: #000;
+}
+
+.categories-image {
+    width: 30em;
+    height: 35em;
+    object-fit: contain;
+}
+
+.categories-text {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
