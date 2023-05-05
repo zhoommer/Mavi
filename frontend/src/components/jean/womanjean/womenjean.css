@@ -1,0 +1,44 @@
+
+
+
+.product-list-banner {
+    background-image: url("https://sky-static.mavi.com/sys-master/maviTrImages/h81/h55/9694567432222/jean-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15em;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+}
+
+
+.product-category-list {
+    position: relative;
+    top: 70px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.product-category-list > div {
+    font-size: 20px;
+}
+
+.slider-link {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.slider-link:hover {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+

@@ -1,0 +1,26 @@
+
+
+.woman-jean {
+	background-image: url("../../assets/images/kadin-jean.webp");
+	background-position: left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 60em;
+
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+
+.men-jean {
+	background-image: url("../../assets/images/erkek-jean.webp");
+	background-position: left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 60em;
+
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}

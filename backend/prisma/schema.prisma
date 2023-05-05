@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email    String  @unique
+  hash     String
+  hashedRt String?
+
+  User_Information User_Information?
+
+  @@map("users")
+}
+
+model User_Information {
+  id        Int       @id @default(autoincrement())
+  firstname String?
+  lastname  String?
+  mobile    String?   @unique
+  birthDate DateTime? @db.Date()
+  gender    Boolean?
+  adress    String?
+
+  photos String?
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int  @unique
+}
+
+model Products {
+  id              Int     @id @default(autoincrement())
+  title           String?
+  subtitle        String?
+  price           Float?
+  discountedPrice Float?  @default(0)
+  code            String?
+  size            String?
+  length          String?
+
+  url           String?
+  Products_Info Products_Info?
+}
+
+model Products_Info {
+  id        Int  @id @default(autoincrement())
+  cotton    Int?
+  spandex   Int?
+  modal     Int?
+  linen     Int?
+  polyester Int?
+
+  product   Products @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId Int      @unique
+}
+
+model WomenJeanCategory {
+  id       Int     @id @default(autoincrement())
+  title    String
+  subtitle String?
+  url      String
+}
