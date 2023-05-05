@@ -9,6 +9,7 @@ import { ProductsModule } from './products/products.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Products } from './products/entities/Product';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { Products } from './products/entities/Product';
     PrismaModule,
     AuthModule,
     ProductsModule,
+    CategoriesModule,
   ],
   controllers: [],
   providers: [
